@@ -43,7 +43,7 @@ function verileniTrimle(obj, prop) {
  */
 function enBuyukTamsayiyiBul(tamsayilar) {
   // ✨ kodlar buraya
-  let enBuyukSayi = 0;
+  let enBuyukSayi = tamsayilar[0].tamsayi;
   for (let i = 0; i < tamsayilar.length; i++) {
     const element = tamsayilar[i];
     if (element.tamsayi > enBuyukSayi && typeof element.tamsayi === "number") {
@@ -73,10 +73,10 @@ function Sayici(ilkSayi) {
    * sayac.asagiSay() // 0 döndürür
    * sayac.asagiSay() // 0 döndürür
    */
-  let tempSayi = ilkSayi;
+  let initialSayi = ilkSayi;
   this.asagiSay = () => {
     // ✨ kodlar buraya
-    return tempSayi == 0 ? 0 : tempSayi--;
+    return initialSayi == 0 ? 0 : initialSayi--;
   };
 }
 const sayac = new Sayici(3);
@@ -111,10 +111,10 @@ function Mevsimler() {
   };
 }
 const mevsimler = new Mevsimler();
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 9; i++) {
   console.log(mevsimler.sonraki());
 }
-function Araba(/*kodlar buraya */ isim, depoBenzin, kml) {
+function Araba( isim, depoBenzin, kml) {
   /**
    * [Görev 6A] Araba 3 argüman alarak bir araba nesnesi oluşturur
    * @param {string} isim - arabanın ismi
@@ -184,7 +184,7 @@ function Araba(/*kodlar buraya */ isim, depoBenzin, kml) {
 const focus = new Araba("focus", 20, 30);
 
 console.log(focus.sur(600));
-console.log(focus.benzinal(55));
+
 console.log(focus.sur(200));
 console.log(focus.benzinal(5));
 /**
@@ -208,10 +208,10 @@ function asenkronCiftSayi(sayi) {
 }
 
 asenkronCiftSayi(3).then((res) => {
-  console.log("Sonuç:", res);
+  console.log("Çift sayı mı?:", res);
 });
 asenkronCiftSayi(10).then((res) => {
-  console.log("Sonuç:", res);
+  console.log("Çift sayı mı?:", res);
 });
 
 module.exports = {
